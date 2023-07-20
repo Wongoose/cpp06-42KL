@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:37:02 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/20 14:42:13 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/20 14:47:33 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ ScalarConverter::ScalarConverter() {
 
 ScalarConverter::ScalarConverter(std::string str) {
     std::cout << "ScalarConverter: Str constructor called" << std::endl;
+    (void)str;
 }
 
 ScalarConverter::ScalarConverter(const ScalarConverter &copy) {
