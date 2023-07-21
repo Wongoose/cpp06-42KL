@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:36:50 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/21 18:26:41 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/21 18:34:06 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 #include <iostream>
 #include <iomanip>
 #include <math.h>
+#include <climits>
+#include <limits>
+#include <cmath>
 
 #define RESET "\033[39m"
 #define BLACK "\033[30m"
