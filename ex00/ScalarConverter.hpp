@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:36:50 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/20 14:40:32 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/21 18:26:41 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <math.h>
 
-#define DEFAULT "\033[39m"
+#define RESET "\033[39m"
 #define BLACK "\033[30m"
 #define GREY "\033[90m"
 #define RED "\033[31m"
@@ -76,6 +77,12 @@ class ScalarConverter {
         t_type _type;
         void _main_set_type();
         void _set_type_int_float_double();
+        void _convert_from_char();
+        void _convert_from_int();
+        void _convert_from_float();
+        void _convert_from_double();
+        void _convert_from_nan();
+        void _convert_from_inf();
 };
 
 #endif
