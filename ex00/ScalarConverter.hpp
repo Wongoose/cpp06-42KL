@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:36:50 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/21 18:34:06 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/24 22:17:35 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,14 @@ class ScalarConverter {
         t_type _type;
         void _main_set_type();
         void _set_type_int_float_double();
-        void _convert_from_char();
-        void _convert_from_int();
-        void _convert_from_float();
-        void _convert_from_double();
-        void _convert_from_nan();
-        void _convert_from_inf();
 };
+
+// From helper file
+void convert_from_char(const std::string &input);
+void convert_from_int(const std::string &input);
+void convert_from_float(const std::string &input);
+void convert_from_double(const std::string &input);
+void convert_from_nan(const std::string &input);
+void convert_from_inf(const std::string &input);
 
 #endif
