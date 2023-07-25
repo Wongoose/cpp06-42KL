@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 10:04:28 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/25 10:04:31 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/25 10:09:02 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,13 @@ Serializer &Serializer::operator=(const Serializer &other) {
 }
 
 uintptr_t Serializer::serialize(Data *ptr) {
-    uintptr_t res = (uintptr_t)(Data *)ptr;
+    // uintptr_t res = (uintptr_t)(Data *)ptr;
+    uintptr_t res = reinterpret_cast<uintptr_t>(ptr);
     return (res);
 }
 
 Data *Serializer::deserialize(uintptr_t raw) {
-    Data *res;
-    res = (Data *)(uintptr_t)raw;
+    // Data *res = (Data *)(uintptr_t)raw;
+    Data *res = reinterpret_cast<Data *>(raw);
     return (res);
 }
