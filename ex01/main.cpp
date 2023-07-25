@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/21 18:35:20 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/25 10:04:17 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/25 10:05:43 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 // can be stored in a storage place or sent over a computer network and then reconfigured
 // in another computer environment.
 // Serialization saves an item as a byte string in storage.
-// Learning about reinterpret_cast
+// Learning about reinterpret_cast (more than static_cast, converts pointer to different types)
 int main() {
     std::cout << MAGENTA << "----- Creating Data struct -----" << std::endl << RESET;
     Data data = Data();
