@@ -6,15 +6,15 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 18:35:43 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/26 18:40:55 by zwong            ###   ########.fr       */
+/*   Updated: 2023/07/27 00:32:35 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
 
-Base::Base() { std::cout << "Base: Default constructor called" << std::endl; }
+Base::Base() {}
 
-Base::~Base() { std::cout << "Base: Default destructor called" << std::endl; }
+Base::~Base() {}
 
 Base *generate(void) {
     int type = std::rand() % 3;
@@ -42,7 +42,7 @@ void identify(Base *p) {
     else if (dynamic_cast<C*>(p) != 0)
         std::cout << GREEN << "\"C\"" << std::endl << RESET;
     else
-        std::cout << RED << "Failed to identify class!" << std::endl << RESET;
+        ;
 }
 
 void identify(Base &p) {
@@ -53,20 +53,17 @@ void identify(Base &p) {
         (void)useless;
         std::cout << GREEN << "\"A\"" << std::endl << RESET;
     } catch (std::exception &err) {
-        std::cout << RED << "Failed to identify class!" << std::endl << RESET;
     }
     try {
         useless = dynamic_cast<B&>(p);
         (void)useless;
         std::cout << GREEN << "\"B\"" << std::endl << RESET;
     } catch (std::exception &err) {
-        std::cout << RED << "Failed to identify class!" << std::endl << RESET;
     }
     try {
         useless = dynamic_cast<C&>(p);
         (void)useless;
         std::cout << GREEN << "\"C\"" << std::endl << RESET;
     } catch (std::exception &err) {
-        std::cout << RED << "Failed to identify class!" << std::endl << RESET;
     }
 }
