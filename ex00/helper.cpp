@@ -6,15 +6,17 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 22:12:20 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/24 22:15:43 by zwong            ###   ########.fr       */
+/*   Updated: 2023/09/26 14:57:23 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
 // PRIVATE helper functions
-void _print_char(int c, int f) {
-    if (c - f >= CHAR_MAX || c <= CHAR_MIN)
+// printing char requires extra validation
+// 1. 
+void _print_char(int c) {
+    if (c >= CHAR_MAX || c <= CHAR_MIN)
         std::cout << GREY << "char: impossible" << std::endl << RESET;
     else if (std::isprint(c))
         std::cout << GREEN << "char: '" << static_cast<char>(c) << "'" << std::endl << RESET;
@@ -27,7 +29,7 @@ void convert_from_char(const std::string &input) {
     std::cout << MAGENTA << "----- Converting from char -----" << std::endl << RESET;
     // Before convert, use corresponding types first
     char c = input[0];
-    _print_char(c, 0);
+    _print_char(c);
     std::cout << GREEN << "int: " << static_cast<int>(c) << std::endl << RESET;
     std::cout << GREEN << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl << RESET;
     std::cout << GREEN << "double: " << static_cast<double>(c) << std::endl << RESET;
@@ -43,7 +45,7 @@ void convert_from_int(const std::string &input) {
     // NOTE: If any bugs occurs, could be due to using "long" instead of "int"
     int num = (int)temp;
     // char
-    _print_char(static_cast<int>(num), 0);
+    _print_char(static_cast<int>(num));
     // int
     std::cout << GREEN << "int: " << num << std::endl << RESET;
     // float
@@ -57,7 +59,7 @@ void convert_from_float(const std::string &input) {
     std::cout << MAGENTA << "----- Converting from float -----" << std::endl << RESET;
     float num = std::strtof(input.c_str(), NULL);
     // char
-    _print_char((int)num, 1); // float comparison "float < CHAR_MAX + 1" cuz float decimal will round down
+    _print_char(static_cast<char>(num));
     // int
     if (num < INT_MIN || num > INT_MAX) // cannot overflow int max/min because float conversion caps
         std::cout << GREY << "int: impossible" << std::endl << RESET;
@@ -89,7 +91,7 @@ void convert_from_double(const std::string &input) {
     std::cout << MAGENTA << "----- Converting from double -----" << std::endl << RESET;
     double num = std::strtod(input.c_str(), NULL);
     // char
-    _print_char((int)num, 1); // double comparison might need "float < CHAR_MAX + 1"
+    _print_char(static_cast<char>(num));
     // int
     if (num < INT_MIN || num > INT_MAX) // cannot overflow int max/min because double conversion caps
         std::cout << GREY << "int: impossible" << std::endl << RESET;

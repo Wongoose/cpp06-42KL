@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:37:02 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/24 22:14:55 by zwong            ###   ########.fr       */
+/*   Updated: 2023/09/26 11:30:23 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,14 @@ t_type ScalarConverter::get_type() const {
 // Setter
 
 // PUBLIC functions
+// Steps
+// 1. Get input
+// 2. Define what type is the input
+// 3. Validate
+// 4. Convert to the other 3 types and print
 void ScalarConverter::convert(const std::string &input) {
     this->_input = input;
-    _main_set_type();
+    _main_define_type();
     switch (_type) {
         case INVALID:
             std::cout << RED << "Input is invalid, please try again!" << std::endl << RESET;
@@ -81,7 +86,7 @@ void ScalarConverter::convert(const std::string &input) {
 }
 
 // PRIVATE functions to set types
-void ScalarConverter::_main_set_type() {
+void ScalarConverter::_main_define_type() {
     _type = INVALID;
     // Check for char
     if (_input.length() == 1 && !std::isdigit(_input[0])) {

@@ -6,7 +6,7 @@
 /*   By: zwong <zwong@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 14:36:50 by zwong             #+#    #+#             */
-/*   Updated: 2023/07/24 22:17:35 by zwong            ###   ########.fr       */
+/*   Updated: 2023/09/26 11:29:03 by zwong            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ class ScalarConverter {
     private:
         std::string _input;
         t_type _type;
-        void _main_set_type();
+        void _main_define_type();
         void _set_type_int_float_double();
 };
 
